@@ -5,6 +5,7 @@ from fontTools.ttLib.ttFont import TTFont
 from fontTools.misc import etree
 from fire import Fire
 
+
 def update_matadata(font_path: str, weight: str):
     """Updating Metadata
     This function updates the metadata by TTF -> TTX -> TTF
@@ -17,12 +18,14 @@ def update_matadata(font_path: str, weight: str):
         fontRevision = root.find(".//fontRevision")
         fontRevision.set("value", "0.001")
         for record in root.findall('.//namerecord[@nameID="0"]'):
-            record.text = "\n".join([
-                "Copyright (c) 2020, TANIGUCHI Masaya (https://github.com/tani/artistic-code-pro)",
-                "Copyright (c) 2014-2020 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)",
-                "Copyright (c) 2014, 2015 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'",
-                "Copyright (c) 2019 M+ FONTS PROJECT",
-            ])
+            record.text = "\n".join(
+                [
+                    "Copyright (c) 2020, TANIGUCHI Masaya (https://github.com/tani/artistic-code-pro)",
+                    "Copyright (c) 2014-2020 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)",
+                    "Copyright (c) 2014, 2015 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'",
+                    "Copyright (c) 2019 M+ FONTS PROJECT",
+                ]
+            )
         for record in root.findall('.//namerecord[@nameID="1"]'):
             record.text = "Artistic Code Pro"
         for record in root.findall('.//namerecord[@nameID="2"]'):
@@ -49,6 +52,7 @@ def update_matadata(font_path: str, weight: str):
         font.save(ttf.name)
         font.close()
         copy2(ttf.name, font_path)
+
 
 if __name__ == "__main__":
     Fire(update_matadata)

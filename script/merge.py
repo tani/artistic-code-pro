@@ -4,6 +4,7 @@ import fontforge
 import psMat
 from fire import Fire
 
+
 def merge_fonts(source_font: fontforge.font, *extra_fonts: List[fontforge.font]):
     """Merging Font
 
@@ -11,17 +12,28 @@ def merge_fonts(source_font: fontforge.font, *extra_fonts: List[fontforge.font])
     Compared to the built-in function,
     it skips to merge if the glyph is already defined.
     """
-    if (len(extra_fonts) == 0):
+    if len(extra_fonts) == 0:
         return
-    source_codepoints = set(g.encoding for g in source_font.glyphs() if g.isWorthOutputting())
-    extra_codepoints = set(g.encoding for g in extra_fonts[0].glyphs() if g.isWorthOutputting())
-    new_codepoints = set(c for c in extra_codepoints - source_codepoints if 0 <= c and c <= 0xffff)
-    print("src: {} chars, ext: {} chars, new: {} chars".format(len(source_codepoints), len(extra_codepoints), len(new_codepoints)))
+    source_codepoints = set(
+        g.encoding for g in source_font.glyphs() if g.isWorthOutputting()
+    )
+    extra_codepoints = set(
+        g.encoding for g in extra_fonts[0].glyphs() if g.isWorthOutputting()
+    )
+    new_codepoints = set(
+        c for c in extra_codepoints - source_codepoints if 0 <= c and c <= 0xFFFF
+    )
+    print(
+        "src: {} chars, ext: {} chars, new: {} chars".format(
+            len(source_codepoints), len(extra_codepoints), len(new_codepoints)
+        )
+    )
     extra_fonts[0].selection.select(*new_codepoints)
     extra_fonts[0].copy()
     source_font.selection.select(*new_codepoints)
     source_font.paste()
     merge_fonts(source_font, *extra_fonts[1:])
+
 
 def generate_font(target_name: str, source_name: str, cjk_name: str):
     """Generating Font
@@ -33,12 +45,10 @@ def generate_font(target_name: str, source_name: str, cjk_name: str):
     source_font.reencode("unicode")
     cjk_font.em = source_font.em
     merge_fonts(source_font, cjk_font)
-    for glyph in source_font.selection.select("U+300C").byGlyphs:
-        matrix = psMat.translate((100, 0))
-        glyph.transform(matrix)
     source_font.generate(target_name)
     cjk_font.close()
     source_font.close()
+
 
 if __name__ == "__main__":
     Fire(generate_font)
