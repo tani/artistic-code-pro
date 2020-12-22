@@ -1,0 +1,58 @@
+\documentclass{ltjsarticle}
+\usepackage{luatexja-fontspec}
+\usepackage[abspath]{currfile}
+\setmainjfont[
+  Path = \currfileabsdir,
+  UprightFont = build/ArtisticCodePro-Regular.ttf
+]{ArtisticCodePro-Regular}
+\setmonofont[
+  Contextuals={Alternate},
+  Path = \currfileabsdir,
+  UprightFont = build/ArtisticCodePro-Regular.ttf
+]{ArtisticCodePro-Regular}
+\makeatletter
+\def\verbatim@nolig@list{}
+\makeatother
+\begin{document}
+　吾輩は猫である。名前はまだ無い。
+
+　どこで生まれたか頓と見當がつかぬ。何ても暗薄いじめじめした所でニャー／＼泣いて居た事丈は記憶して居る。吾輩はこゝで始めて人間といふものを見た。然もあとで聞くとそれは書生といふ人間で一番獰惡な種族であつたさうだ。
+
+\begin{verbatim}
+           .= .- := =:=
+        == != === !== =/=
+
+    <<- <-- <- <-> -> --> ->>
+<=< <<= <==    <=> => ==> =>> >=>
+    >>= >>- >-     -< -<< =<<
+        <~~ <~ ~~~ ~> ~~>
+
+     <<< << <= <>  >= >> >>>
+            <| <|> |>
+
+            <$ <$> $>
+            <+ <+> +>
+            <* <*> *>
+
+       \\ \\\ {- -} // ///
+          /* /** **/ */
+      </ <!-- www  --> />
+      0xF  9:45  m-x *ptr
+
+       ;; ;;; :: ::: !! !!!
+       ?? ??? %% %%% && &&&
+       || ||| .. ... ..< []
+       -- --- ++ +++ ** ***
+
+          ~= ~- -~ =~ ~@
+        ^= ?= /= /== |= ||=
+           ## ### ####
+         #{ #[ #( #? #_ #_(
+
+
+a*b a*A B*b A*B *a *A a* A*
+a-b a-A B-b A-B -a -A a- A-
+a+b a+A B+b A+B +a +A a+ A+
+a:b a:A B:b A:B :a :A a: A:
+\end{verbatim}
+\end{document}
