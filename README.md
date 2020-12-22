@@ -12,6 +12,9 @@ Artistic Code Pro は 日本語を含むソースコードを華やかに表示�
 - 多様な絵文字を収録しソースコードに花を添えます。(Nerd Fonts)
 - Light Regular Medium SemiBold Bold の５ウェイトを用意しています。
 
+このフォントを利用したドキュメント（[PDF](https://github.com/tani/artistic-code-pro/releases/download/v0.001/preview.pdf))を公開しています。
+
+
 ## 著作権およびライセンス
 
 フォントの生成に使用した上流のフォントのライセンス（Open Font License v1.1）に従います。
