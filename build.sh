@@ -6,27 +6,27 @@ mkdir build
 
 fontforge -script script/merge.py \
     --target_name="./build/ArtisticCodePro-Light.ttf" \
-    --source_name="./FiraCode/ttf/FiraCode-Light.ttf" \
-    --cjk_name="./Mgenplus/mgenplus-2m-light.ttf" 
+    --source_name="./FiraCode/distr/ttf/FiraCode-Light.ttf" \
+    --cjk_name="./mgenplus/mgenplus-1mn-light.ttf" 
 fontforge -script script/merge.py \
     --target_name="./build/ArtisticCodePro-Regular.ttf" \
-    --source_name="./FiraCode/ttf/FiraCode-Regular.ttf" \
-    --cjk_name="./Mgenplus/mgenplus-2m-regular.ttf"
+    --source_name="./FiraCode/distr/ttf/FiraCode-Regular.ttf" \
+    --cjk_name="./mgenplus/mgenplus-1mn-regular.ttf"
 fontforge -script script/merge.py \
     --target_name="./build/ArtisticCodePro-Medium.ttf" \
-    --source_name="./FiraCode/ttf/FiraCode-Medium.ttf" \
-    --cjk_name="./Mgenplus/mgenplus-2m-medium.ttf"
+    --source_name="./FiraCode/distr/ttf/FiraCode-Medium.ttf" \
+    --cjk_name="./mgenplus/mgenplus-1mn-medium.ttf"
 fontforge -script script/merge.py \
     --target_name="./build/ArtisticCodePro-SemiBold.ttf" \
-    --source_name="./FiraCode/ttf/FiraCode-SemiBold.ttf" \
-    --cjk_name="./Mgenplus/mgenplus-2m-bold.ttf"
+    --source_name="./FiraCode/distr/ttf/FiraCode-SemiBold.ttf" \
+    --cjk_name="./mgenplus/mgenplus-1mn-bold.ttf"
 fontforge -script script/merge.py \
     --target_name="./build/ArtisticCodePro-Bold.ttf" \
-    --source_name="./FiraCode/ttf/FiraCode-Bold.ttf" \
-    --cjk_name="./Mgenplus/mgenplus-2m-bold.ttf"
+    --source_name="./FiraCode/distr/ttf/FiraCode-Bold.ttf" \
+    --cjk_name="./mgenplus/mgenplus-1mn-bold.ttf"
 
 parallel -i \
-    fontforge -script ./NerdFonts/font-patcher \
+    fontforge -script ./nerd-fonts/font-patcher \
         --adjust-line-height \
         --fontawesome \
         --fontawesomeextension \
@@ -48,6 +48,7 @@ parallel -i \
 
 parallel -i \
     python3 script/metadata.py \
+        --version=0.002 \
         --weight={} \
         --font_path=build/ArtisticCodePro-{}.ttf \
     -- Light Regular Medium SemiBold Bold

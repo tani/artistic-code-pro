@@ -1,0 +1,6 @@
+[submodule "nerd-fonts"]
+	path = nerd-fonts
+	url = git://github.com/ryanoasis/nerd-fonts
+[submodule "FiraCode"]
+	path = FiraCode
+	url = git://github.com/tonsky/FiraCode

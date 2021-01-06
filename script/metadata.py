@@ -6,7 +6,7 @@ from fontTools.misc import etree
 from fire import Fire
 
 
-def update_matadata(font_path: str, weight: str):
+def update_matadata(font_path: str, weight: str, version: float):
     """Updating Metadata
     This function updates the metadata by TTF -> TTX -> TTF
     """
@@ -16,7 +16,7 @@ def update_matadata(font_path: str, weight: str):
         tree = etree.parse(xml.name)
         root = tree.getroot()
         fontRevision = root.find(".//fontRevision")
-        fontRevision.set("value", "0.001")
+        fontRevision.set("value", str(version))
         for record in root.findall('.//namerecord[@nameID="0"]'):
             record.text = "\n".join(
                 [
@@ -31,11 +31,11 @@ def update_matadata(font_path: str, weight: str):
         for record in root.findall('.//namerecord[@nameID="2"]'):
             record.text = weight
         for record in root.findall('.//namerecord[@nameID="3"]'):
-            record.text = "0.001;TANI;ArtisticCodePro-{}".format(weight)
+            record.text = "{};TANI;ArtisticCodePro-{}".format(version, weight)
         for record in root.findall('.//namerecord[@nameID="4"]'):
             record.text = "Artistic Code Pro {}".format(weight)
         for record in root.findall('.//namerecord[@nameID="5"]'):
-            record.text = "Version 0.001"
+            record.text = "Version {}".format(version)
         for record in root.findall('.//namerecord[@nameID="6"]'):
             record.text = "ArtisticCodePro-{}".format(weight)
         for record in root.findall('.//namerecord[@nameID="11"]'):
