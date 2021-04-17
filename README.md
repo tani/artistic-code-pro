@@ -1,4 +1,6 @@
-# Artistic Code Pro
+<p align="center">
+<img src="https://typography.deno.dev/render?text=Artistic%20Code%20Pro&family=Fira+Code&weight=700&size=40&color=%2377bb41" alt="Artistic Code Pro" />
+</p>
 
 Artistic Code Pro = "Mgen+" + "Fira Code" + "Nerd Fonts"
 
@@ -22,8 +24,3 @@ Artistic Code Pro は 日本語を含むソースコードを華やかに表示�
 また生成に使用されたスクリプトの一切の著作権は TANIGUCHI Masaya に帰属し、MIT ライセンスのもとでのみ使用を許可します。
 
 Copyright 2020 TANIGUCHI Masaya All Right Reserved.
-
-## 開発者向けの情報
-
-現在 Artistic Code Pro のリポジトリでは合成元のフォントを含んでいません。
-そのためこのリポジトリをクローンしても配布フォントと同じフォントをつくることは難しいと思われます。
