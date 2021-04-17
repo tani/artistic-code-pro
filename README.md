@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://typography.deno.dev/render?text=Artistic%20Code%20Pro&family=Fira+Code&weight=700&size=40&color=%2377bb41" alt="Artistic Code Pro" />
+<img src="https://typography.deno.dev/render?text=%3C!--%20Artistic%20Code%20Pro%20--%3E&family=Fira+Code&weight=700&size=40&color=%2377bb41" alt="Artistic Code Pro" />
 </p>
 
 Artistic Code Pro = "Mgen+" + "Fira Code" + "Nerd Fonts"
