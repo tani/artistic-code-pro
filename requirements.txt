@@ -9,7 +9,7 @@ fonttools==4.18.2
 lxml==4.6.3
 MutatorMath==3.0.1
 psautohint==2.2.0
-pyclipper==1.2.1
+pyclipper==1.3.0.post5
 six==1.15.0
 termcolor==1.1.0
 tqdm==4.55.1
