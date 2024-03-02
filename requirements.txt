@@ -12,6 +12,6 @@ psautohint==2.2.0
 pyclipper==1.2.1
 six==1.15.0
 termcolor==1.1.0
-tqdm==4.55.1
+tqdm==4.66.2
 ufonormalizer==0.5.3
 ufoProcessor==1.9.0
