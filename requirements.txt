@@ -5,7 +5,7 @@ fire==0.3.1
 fontMath==0.6.0
 fontParts==0.9.7
 fontPens==0.2.4
-fonttools==4.18.2
+fonttools==4.50.0
 lxml==4.6.3
 MutatorMath==3.0.1
 psautohint==2.2.0
